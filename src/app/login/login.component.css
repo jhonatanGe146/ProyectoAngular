@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+:root{
+   --white:#fff;
+   --black: #333333;
+   --green:#5eb319;
+   --gray: #707070;
+   --border:.1rem solid rgba(84, 134, 80, 0.7);
+}
+
+*{
+   font-family: 'Montserrat', sans-serif;
+   margin: 0; padding: 0;
+   box-sizing: border-box;
+   outline: none; border: none;
+   text-decoration: none;
+}
+
+
+section{
+   padding: 3rem 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+
+/*
+   FORMULARIO
+*/
+
+.login{
+   margin: auto;
+   margin-top: 30px;
+   width: 400px;
+ }
+
+.login .title{
+   position: relative;
+   font-size: 22px;
+   font-weight: 600;
+}
+
+.login .title::before{
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   height: 3px;
+   width: 30px;
+   background-color: #5eb319;
+   border-radius: 25px;
+}
+
+.login .input-field{
+   position: relative;
+   height: 50px;
+   width: 100%;
+   margin-top: 30px;
+}
+
+.input-field input{
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   padding: 0 35px;
+   border: none;
+   outline: none;
+   font-size: 16px;
+   border-bottom: 2px solid #ccc;
+   border-top: 2px solid transparent;
+   transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+   border-bottom-color:#5eb319;
+}
+
+.input-field i{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   color: #999;
+   font-size: 23px;
+   transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+   color: #5eb319;
+}
+
+.input-field i.icon{
+   left: 0;
+}
+.input-field i.showHidePw{
+   right: 0;
+   cursor: pointer;
+   padding: 10px;
+}
+
+.login .checkbox-text{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 20px;
+   color: #333333;
+}
+
+.checkbox-text .checkbox-content{
+   display: flex;
+   align-items: center;
+}
+
+.checkbox-text .checkbox-content .text {
+    color: #333333;
+ }
+ 
+
+.checkbox-content input{
+   margin-right: 10px;
+   accent-color: #5eb319;
+   color: #333333;
+}
+
+.login .text{
+   color: #333333;
+   font-size: 14px;
+}
+
+.login a.text{
+   color: #5eb319;
+   text-decoration: none;
+}
+.login a:hover{
+   text-decoration: underline;
+}
+
+.login .button{
+   margin-top: 35px;
+}
+
+.login .button input{
+   border: none;
+   color: #333333;
+   font-size: 17px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   border-radius: 6px;
+   background-color: #5eb319;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.button input:hover{
+   background-color: #5eb319d8;
+}
+
+.login .login-signup{
+   margin-top: 30px;
+   margin-bottom: 30px;
+   text-align: center;
+   color: #333333;
+}
+ 

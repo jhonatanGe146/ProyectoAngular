@@ -1,0 +1,69 @@
+<div>
+    <app-header></app-header>
+  </div>
+  
+  <div class="signup">
+    <span class="title">Registro</span>
+  
+    <form (ngSubmit)="crearNuevoUsuario()">
+      <div class="input-field">
+        <input type="text" [(ngModel)]="nuevoUsuario.NOMBRE" name="nombre" placeholder="Ingrese su nombre" required />
+        <i class="uil uil-user"></i>
+      </div>
+  
+      <div class="input-field">
+        <input type="text" [(ngModel)]="nuevoUsuario.APELLIDO" name="apellido" placeholder="Ingrese su apellido"
+          required />
+        <i class="uil uil-user"></i>
+      </div>
+  
+      <select class="input-select" [(ngModel)]="nuevoUsuario.TIPO_DOCUMENTO_IDTIPODOCUMENTO" name="id_tipoDocumento" required>
+        <option selected="selected" disabled="disabled">
+          Seleccione tipo de documento
+        </option>
+        <option *ngFor="let tipoDocumento of tiposDocumento" [value]="tipoDocumento.id">
+          {{ tipoDocumento.nombre }}
+        </option>
+      </select>
+  
+      <div class="input-field">
+        <input type="text" [(ngModel)]="nuevoUsuario.NRODOCUMENTO" name="documento" placeholder="Ingrese su documento"
+          required />
+        <i class="fa-solid fa-id-card"></i>
+      </div>
+  
+      <div class="input-field">
+        <input type="text" [(ngModel)]="nuevoUsuario.EMAIL" name="email" placeholder="Ingrese su email" required />
+        <i class="uil uil-envelope icon"></i>
+      </div>
+  
+      <div class="input-field">
+        <input type="text" [(ngModel)]="nuevoUsuario.TELEFONO" name="telefono" placeholder="Ingrese su telefono"
+          required />
+        <i class="fa-sharp fa-solid fa-phone"></i>
+      </div>
+  
+      <div class="input-field">
+        <input type="password" [(ngModel)]="nuevoUsuario.CONTRASENA" name="password" class="password"
+          placeholder="Ingrese su contraseña" required />
+        <i class="uil uil-lock icon"></i>
+        <i class="uil uil-eye-slash showHidePw"></i>
+      </div>
+  
+      <div class="botones">
+        <div class="input-field button">
+          <input type="submit" value="Registrate" />
+        </div>
+      </div>
+  
+      <div class="login-signup">
+        <span class="text">¿Ya tienes una cuenta?
+            <a routerLink="/login" class="text signup-link">Inicia Sesión</a>
+        </span>
+    </div>
+    </form>
+  </div>
+  
+  <div>
+    <app-footer></app-footer>
+  </div>

@@ -1,0 +1,54 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Perseo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<div>
+    <app-header></app-header>
+</div>
+
+<div class="login">
+    <span class="title">Inicio de Sesión</span>
+
+    <form (ngSubmit)="iniciarSesion()">
+    <h3 style="color: #55828B;">
+        </h3>
+        <div class="input-field">
+            <input type="text" [(ngModel)]="usuario.username" name="email" placeholder="Ingrese su Documento" required />
+            <i class="fa-solid fa-id-card"></i>
+        </div>
+        <div class="input-field">
+            <input type="password" [(ngModel)]="usuario.password" name="password" class="password"
+                placeholder="Ingrese su contraseña" required />
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+        </div>
+
+        <div class="checkbox-text">
+            <div class="checkbox-content">
+                <input type="checkbox" id="logCheck">
+                <label for="logCheck" class="text" style="color: #333333;">Recuérdame</label>
+            </div>
+            
+            <a routerLink="" class="text">Olvidé mi contraseña</a>
+        </div>
+
+        <div class="input-field button">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+
+    <div class="login-signup">
+        <span class="text">¿No tienes una cuenta?
+            <a routerLink="/signup" class="text signup-link">Regístrate</a>
+        </span>
+    </div>
+</div>
+
+<div>
+    <app-footer></app-footer>
+</div>
