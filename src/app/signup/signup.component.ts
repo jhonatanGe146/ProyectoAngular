@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -22,30 +21,18 @@ export class SignupComponent {
     { id: 2, nombre: 'Pasaporte' },
   ];
 
-  // users: any[] = [];
-  // nuevoUsuario: any = {
-  //   NRODOCUMENTO: '',
-  //   NOMBRE: '',
-  //   APELLIDO: '',
-  //   EMAIL: '',
-  //   TELEFONO: '',
-  //   CONTRASENA: '',
-  //   TIPO_DOCUMENTO_IDTIPODOCUMENTO: null,
-  //   TIPO_PERSONA_IDTIPOPERSONA: 3,
-  //   ESTADO_USUARIO_IDESTADO: 1,
-  // };
-
   users: any[] = [];
   nuevoUsuario: any = {
-    numero_documento: '',
-    nombre: '',
-    apellido: '',
+    NRODOCUMENTO: '',
+    NOMBRE: '',
+    APELLIDO: '',
     email: '',
     username: '',
-    telefono: '',
+    TELEFONO: '',
     password: '',
-    id_tipoDocumento: null,
-    id_tipoPersona: 2
+    TIPO_DOCUMENTO_IDTIPODOCUMENTO: null,
+    TIPO_PERSONA_IDTIPOPERSONA: 3,
+    ESTADO_USUARIO_IDESTADO: 1,
   };
 
   constructor(private authService: AuthService, private router: Router) { }
