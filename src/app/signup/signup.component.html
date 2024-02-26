@@ -7,17 +7,17 @@
   
     <form (ngSubmit)="crearNuevoUsuario()">
       <div class="input-field">
-        <input type="text" [(ngModel)]="nuevoUsuario.NOMBRE" name="nombre" placeholder="Ingrese su nombre" required />
+        <input type="text" [(ngModel)]="nuevoUsuario.nombre" name="nombre" placeholder="Ingrese su nombre" required />
         <i class="uil uil-user"></i>
       </div>
   
       <div class="input-field">
-        <input type="text" [(ngModel)]="nuevoUsuario.APELLIDO" name="apellido" placeholder="Ingrese su apellido"
+        <input type="text" [(ngModel)]="nuevoUsuario.apellido" name="apellido" placeholder="Ingrese su apellido"
           required />
         <i class="uil uil-user"></i>
       </div>
   
-      <select class="input-select" [(ngModel)]="nuevoUsuario.TIPO_DOCUMENTO_IDTIPODOCUMENTO" name="id_tipoDocumento" required>
+      <select class="input-select" [(ngModel)]="nuevoUsuario.id_tipoDocumento" name="id_tipoDocumento" required>
         <option selected="selected" disabled="disabled">
           Seleccione tipo de documento
         </option>
@@ -27,24 +27,24 @@
       </select>
   
       <div class="input-field">
-        <input type="text" [(ngModel)]="nuevoUsuario.NRODOCUMENTO" name="documento" placeholder="Ingrese su documento"
+        <input type="text" [(ngModel)]="nuevoUsuario.numero_documento" name="documento" placeholder="Ingrese su documento"
           required />
         <i class="fa-solid fa-id-card"></i>
       </div>
   
       <div class="input-field">
-        <input type="text" [(ngModel)]="nuevoUsuario.EMAIL" name="email" placeholder="Ingrese su email" required />
+        <input type="text" [(ngModel)]="nuevoUsuario.email" name="email" placeholder="Ingrese su email" required />
         <i class="uil uil-envelope icon"></i>
       </div>
   
       <div class="input-field">
-        <input type="text" [(ngModel)]="nuevoUsuario.TELEFONO" name="telefono" placeholder="Ingrese su telefono"
+        <input type="text" [(ngModel)]="nuevoUsuario.telefono" name="telefono" placeholder="Ingrese su telefono"
           required />
         <i class="fa-sharp fa-solid fa-phone"></i>
       </div>
   
       <div class="input-field">
-        <input type="password" [(ngModel)]="nuevoUsuario.CONTRASENA" name="password" class="password"
+        <input type="password" [(ngModel)]="nuevoUsuario.password" name="password" class="password"
           placeholder="Ingrese su contraseña" required />
         <i class="uil uil-lock icon"></i>
         <i class="uil uil-eye-slash showHidePw"></i>

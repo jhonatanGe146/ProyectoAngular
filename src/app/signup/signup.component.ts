@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -20,25 +22,42 @@ export class SignupComponent {
     { id: 2, nombre: 'Pasaporte' },
   ];
 
+  // users: any[] = [];
+  // nuevoUsuario: any = {
+  //   NRODOCUMENTO: '',
+  //   NOMBRE: '',
+  //   APELLIDO: '',
+  //   EMAIL: '',
+  //   TELEFONO: '',
+  //   CONTRASENA: '',
+  //   TIPO_DOCUMENTO_IDTIPODOCUMENTO: null,
+  //   TIPO_PERSONA_IDTIPOPERSONA: 3,
+  //   ESTADO_USUARIO_IDESTADO: 1,
+  // };
+
   users: any[] = [];
   nuevoUsuario: any = {
-    NRODOCUMENTO: '',
-    NOMBRE: '',
-    APELLIDO: '',
-    EMAIL: '',
-    TELEFONO: '',
-    CONTRASENA: '',
-    TIPO_DOCUMENTO_IDTIPODOCUMENTO: null,
-    TIPO_PERSONA_IDTIPOPERSONA: 3,
-    ESTADO_USUARIO_IDESTADO: 1,
+    numero_documento: '',
+    nombre: '',
+    apellido: '',
+    email: '',
+    username: '',
+    telefono: '',
+    password: '',
+    id_tipoDocumento: null,
+    id_tipoPersona: 2
   };
 
-  constructor(private userService: UserService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   crearNuevoUsuario(): void {
-    this.userService.postUser(this.nuevoUsuario).subscribe((data) => {
+
+    this.nuevoUsuario.username = this.nuevoUsuario.email;
+
+    this.authService.signup(this.nuevoUsuario).subscribe((data) => {
       console.log('Usuario creado:', data);
-      // Aquí puedes actualizar la lista de usuarios o realizar otras acciones después de crear el usuario
+      alert('Registro exitoso');
+      this.router.navigate(['/login'])
     });
   }
 }
